@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script>
+angular.module('Sat',[]).controller('firstController',function($scope,$rootScope){
+
+$scope.Login=true;
+$rootScope.homepage=false;
+$scope.click=[];
+$scope.click1=function(){
+if($scope.name == "admin" && $scope.password == "1234")
+{
+$scope.Login=false;
+$rootScope.homepage=true;
+$scope.Msg3=false;
+}
+else
+{
+$scope.Login=true;
+$rootScope.homepage=false;
+$scope.Msg3=true;
+}
+}
+})
+$scope.logout=function(){
+
+
+
+
+.controller('logoutController', function($scope,$location){
+  $scope.logout = function(){
+      $location.path('/home');
+  }
+})
+.controller('secondController',function($scope,$rootScope){
+
+});
+</script>
+</head>
+<body ng-app="Sat">
+  <div ng-controller="firstController" ng-show="Login">
+    <h2>User Account</h2>
+    <p>UserName: <input type="text" ng-model="name"></p>
+	<br />
+     <p>PassWord: <input type="password" ng-model="password"></p>
+    <br />
+	<font size="3" color="red" ng-model="Msg3" ng-show="Msg3">Last Chance!!!</font>
+	<br />
+    <button ng-click="click1()" ng-model="mustShow" >Login</button>
+	<br />
+  </div>
+  <div ng-controller="secondController" ng-show="homepage">
+  <p>
+<h3>Poda...antha aandavane nama pakkam!!! </h3></p>
+  <div ng-show="mustShow">
+<div ng="logoutController" ng-show="Logout">
+<button ng-click="logout()" ng-model="mustShow">
+  Logout
+</button>
+
+
+</script>
+  
+  </div>
+  </div>
+  </body>
+</html>
